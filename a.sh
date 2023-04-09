@@ -37,4 +37,4 @@ git clone -q https://github.com/meganz/sdk.git --depth=1 -b v${MEGA_SDK_VERSION}
 echo ""
 curl -s https://rclone.org/install.sh | bash
 locale-gen en_US.UTF-8 -q
-RUN apt-get -y autoremove && apt-get -y autoclean
+apt-get -y autoremove && apt-get -y autoclean
