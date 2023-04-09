@@ -19,9 +19,6 @@ echo "██████╗ ██╗   ██╗███╗   ██╗██�
 ██║  ██║╚██████╔╝██║ ╚████║██║ ╚████║██║██║ ╚████║╚██████╔╝
 ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
                                                            "
-
-
-
 export MEGA_SDK_VERSION=4.10.0
 git clone https://github.com/meganz/sdk.git --depth=1 -b v${MEGA_SDK_VERSION} /home/sdk \
 && cd /home/sdk && rm -rf .git \
@@ -33,3 +30,4 @@ git clone https://github.com/meganz/sdk.git --depth=1 -b v${MEGA_SDK_VERSION} /h
 curl  https://rclone.org/install.sh | bash
 locale-gen en_US.UTF-8
 apt-get -y autoremove && apt-get -y autoclean
+pip install aiohttp aiofiles aioshutil anytree apscheduler aria2p asyncio bencoding beautifulsoup4 cfscrape dnspython feedparser flask==2.0.3 google-api-python-client google-auth-httplib2 google-auth-oauthlib gunicorn git+https://github.com/zevtyardt/lk21.git httpx lxml motor pillow psutil pybase64 pymongo pyrogram python-dotenv python-magic qbittorrent-api requests speedtest-cli telegraph tenacity tgCrypto uvloop xattr yt-dlp
