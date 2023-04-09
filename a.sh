@@ -21,3 +21,4 @@ git clone https://github.com/meganz/sdk.git --depth=1 -b v${MEGA_SDK_VERSION} /h
 && cd dist && ls && pip3 install --no-cache-dir megasdk-*.whl 
 echo "All done\n installing rclone"
 curl https://rclone.org/install.sh | bash
+locale-gen en_US.UTF-8
