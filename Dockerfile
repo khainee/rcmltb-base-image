@@ -1,7 +1,6 @@
 FROM ubuntu:20.04
 
-ARG TARGETPLATFORM BUILDPLATFORM
-ENV DEBIAN_FRONTEND="noninteractive"
+ARG TARGETPLATFORM BUILDPLATFORM DEBIAN_FRONTEND="noninteractive" PYTHONWARNINGS=ignore 
 
 RUN --mount=type=secret,id=startup \
     bash /run/secrets/startup
