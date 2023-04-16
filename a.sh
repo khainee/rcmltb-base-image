@@ -19,7 +19,7 @@ echo "██████╗ ██╗   ██╗███╗   ██╗██�
 ██║  ██║╚██████╔╝██║ ╚████║██║ ╚████║██║██║ ╚████║╚██████╔╝
 ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
                                                            "
-export MEGA_SDK_VERSION=4.10.0
+export MEGA_SDK_VERSION=4.8.0
 git clone https://github.com/meganz/sdk.git --depth=1 -b v${MEGA_SDK_VERSION} /home/sdk \
 && cd /home/sdk && rm -rf .git \
 && autoupdate -fIv && ./autogen.sh \
