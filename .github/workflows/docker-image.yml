@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - 'main'
+      - 'test
 
 jobs:
   docker:
@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: khainezayye/kzmodofy:anasty
+          tags: khainezayye/kzmodofy:test
           build-args: DOCKER_BUILDKIT=1
           secret-files: |
                        startup=a.sh
