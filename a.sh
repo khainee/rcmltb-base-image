@@ -1,6 +1,7 @@
 print 'Running apt update'
 apt-get -y update >/dev/null && \
 apt-get -y upgrade >/dev/null && \
+apt-get -y install apt-utils >/dev/null && \
 print 'Installing package'
 apt-get install -y software-properties-common >/dev/null && \
 add-apt-repository -y universe && \
