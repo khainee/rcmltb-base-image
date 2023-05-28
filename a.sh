@@ -1,11 +1,11 @@
-apt-get -y update && \
-apt-get -y upgrade && \
-apt-get install -y software-properties-common && \
+apt-get -y update >/dev/null && \
+apt-get -y upgrade >/dev/null && \
+apt-get install -y software-properties-common >/dev/null && \
 add-apt-repository -y universe && \
 add-apt-repository -y multiverse && \
 add-apt-repository -y restricted && \
-apt-get install -y python3
-apt-get install -y --no-install-recommends python3-pip python3-lxml aria2 tzdata p7zip-full p7zip-rar xz-utils curl wget pv jq ffmpeg locales neofetch git make g++ gcc automake unzip autoconf libtool libsodium-dev libcurl4-openssl-dev libc-ares-dev swig libssl-dev libcrypto++-dev zlib1g-dev libsqlite3-dev libfreeimage-dev
+apt-get install -y --no-install-recommends python3 python3-lxml aria2 tzdata p7zip-full p7zip-rar xz-utils curl wget pv jq ffmpeg locales neofetch git make g++ gcc automake unzip autoconf libtool libsodium-dev libcurl4-openssl-dev libc-ares-dev swig libssl-dev libcrypto++-dev zlib1g-dev libsqlite3-dev libfreeimage-dev >/dev/null
+apt-get install -y python3-pip
 export MEGA_SDK_VERSION=4.8.0
 git clone https://github.com/meganz/sdk.git --depth=1 -b v${MEGA_SDK_VERSION} /home/sdk \
 && cd /home/sdk && rm -rf .git \
@@ -14,7 +14,7 @@ git clone https://github.com/meganz/sdk.git --depth=1 -b v${MEGA_SDK_VERSION} /h
 && make -j$(nproc --all) \
 && cd bindings/python/ && python3 setup.py bdist_wheel \
 && cd dist && ls && pip3 install --no-cache-dir megasdk-*.whl 
-curl  https://rclone.org/install.sh | bash
+curl  https://rclone.org/install.sh | bash >/dev/null
 locale-gen en_US.UTF-8
-apt-get -yq autoremove && apt-get -yq autoclean
+apt-get -y autoremove && apt-get -y autoclean >/dev/null
 #pip3 install aiohttp aiofiles aioshutil anytree apscheduler aria2p asyncio bencoding beautifulsoup4 cfscrape dnspython feedparser flask==2.0.3 google-api-python-client google-auth-httplib2 google-auth-oauthlib gunicorn git+https://github.com/zevtyardt/lk21.git httpx lxml motor pillow psutil pybase64 pymongo pyrogram python-dotenv python-magic requests speedtest-cli telegraph tenacity tgCrypto uvloop xattr yt-dlp
