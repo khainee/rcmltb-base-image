@@ -1,11 +1,14 @@
+print 'Running apt update'
 apt-get -y update >/dev/null && \
 apt-get -y upgrade >/dev/null && \
+print 'Installing package'
 apt-get install -y software-properties-common >/dev/null && \
 add-apt-repository -y universe && \
 add-apt-repository -y multiverse && \
 add-apt-repository -y restricted && \
-apt-get install -y --no-install-recommends python3 python3-lxml aria2 tzdata p7zip-full p7zip-rar xz-utils curl wget pv jq ffmpeg locales neofetch git make g++ gcc automake unzip autoconf libtool libsodium-dev libcurl4-openssl-dev libc-ares-dev swig libssl-dev libcrypto++-dev zlib1g-dev libsqlite3-dev libfreeimage-dev >/dev/null
-apt-get install -y python3-pip
+apt-get install -y --no-install-recommends python3 python3-lxml aria2 tzdata p7zip-full p7zip-rar xz-utils curl wget pv jq ffmpeg locales neofetch git make g++ gcc automake unzip autoconf >/dev/null
+apt-get install -y python3-pip >/dev/null
+print 'install mega sdk'
 export MEGA_SDK_VERSION=4.8.0
 git clone https://github.com/meganz/sdk.git --depth=1 -b v${MEGA_SDK_VERSION} /home/sdk \
 && cd /home/sdk && rm -rf .git \
