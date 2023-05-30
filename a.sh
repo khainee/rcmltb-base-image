@@ -13,13 +13,13 @@ apt-get install -y python3 python3-pip python3-lxml aria2 \
 ln -s /usr/bin/aria2c /usr/bin/luffy
 echo "\n\n\n"
 export MEGA_SDK_VERSION=4.8.0
-git clone https://github.com/meganz/sdk.git --depth=1 -b v$MEGA_SDK_VERSION /home/sdk \
-&& cd /home/sdk && rm -rf .git
-&& autoupdate -fIv && ./autogen.sh 
-&& ./configure --disable-silent-rules --enable-python --with-sodium --disable-examples \
-&& make -j$(nproc --all) \
-&& cd bindings/python/ && python3 setup.py bdist_wheel \
-&& cd dist && ls && pip3 install --no-cache-dir megasdk-*.whl && cd && rm -rf *
+git clone https://github.com/meganz/sdk.git --depth=1 -b v$MEGA_SDK_VERSION /home/sdk \ &&
+cd /home/sdk && rm -rf .git &&
+autoupdate -fIv && ./autogen.sh &&
+./configure --disable-silent-rules --enable-python --with-sodium --disable-examples  &&
+make -j$(nproc --all) &&
+cd bindings/python/ && python3 setup.py bdist_wheel &&
+cd dist && ls && pip3 install --no-cache-dir megasdk-*.whl && cd && rm -rf *
 curl  https://rclone.org/install.sh | bash
 locale-gen en_US.UTF-8
 apt-get -y autoremove && apt-get -y autoclean
