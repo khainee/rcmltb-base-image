@@ -11,9 +11,9 @@ apt-get install -y python3 python3-pip python3-lxml aria2 \
     autoconf libtool libsodium-dev libcurl4-openssl-dev libc-ares-dev swig \
     libssl-dev libcrypto++-dev zlib1g-dev libsqlite3-dev libfreeimage-dev
 ln -s /usr/bin/aria2c /usr/bin/luffy
-echo "\n\n\n"
+echo -e "\e[34;1mINSTALLING MEGASDK\n\n\n\e[0m"
 export MEGA_SDK_VERSION=4.8.0
-git clone https://github.com/meganz/sdk.git --depth=1 -b v$MEGA_SDK_VERSION /home/sdk \ &&
+git clone https://github.com/meganz/sdk.git --depth=1 -b v$MEGA_SDK_VERSION /home/sdk &&
 cd /home/sdk && rm -rf .git &&
 autoupdate -fIv && ./autogen.sh &&
 ./configure --disable-silent-rules --enable-python --with-sodium --disable-examples  &&
