@@ -1,7 +1,6 @@
 echo -e "\e[1;31mInstalling required package"
 apt-get -y update && apt-get -y upgrade
 apt-get install -y software-properties-common
-add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable
 add-apt-repository universe
 add-apt-repository multiverse
 add-apt-repository restricted
