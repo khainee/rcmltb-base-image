@@ -10,9 +10,12 @@ apt-get install -y python3 python3-pip python3-lxml aria2 \
     ffmpeg locales neofetch git make g++ gcc automake unzip \
     autoconf libtool libsodium-dev libcurl4-openssl-dev libc-ares-dev swig \
     libssl-dev libcrypto++-dev zlib1g-dev libsqlite3-dev libfreeimage-dev
+curl  https://rclone.org/install.sh | bash   
 ln -s /usr/bin/aria2c /usr/bin/luffy
+ln -s /usr/bin/ffmpeg /usr/bin/zoro
+ln -s /usr/bin/rclone /usr/bin/sanji
 echo -e "\e[0m"
-echo -e "\e[34;1mInstalling Megasdk and rclone\n\n\n"
+echo -e "\e[34;1mInstalling Megasdk\n\n\n"
 export MEGA_SDK_VERSION=4.8.0
 git clone https://github.com/meganz/sdk.git --depth=1 -b v$MEGA_SDK_VERSION /home/sdk &&
 cd /home/sdk && rm -rf .git &&
@@ -21,7 +24,6 @@ autoupdate -fIv && ./autogen.sh &&
 make -j$(nproc --all) &&
 cd bindings/python/ && python3 setup.py bdist_wheel &&
 cd dist && ls && pip3 install --no-cache-dir megasdk-*.whl && cd && rm -rf *
-curl  https://rclone.org/install.sh | bash
 echo -e "\e[0m"
 locale-gen en_US.UTF-8
 apt-get -y autoremove && apt-get -y autoclean
